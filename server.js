@@ -2,7 +2,7 @@ const express = require("express");
 const connection = require("./config/database");
 const {getUser, createUser, updateUser, deleteUser} = require("./controllers/userController");
 const {createPatient, updatePatient, deletePatient, getPatients} = require("./controllers/patientController");
-const {createRecord} = require("./controllers/recordController");
+const {createRecord, getRecords} = require("./controllers/recordController");
 
 
 connection.connect((err) => {
@@ -37,6 +37,8 @@ app.put('/updatepatient', updatePatient);
 app.get('/patients', getPatients); // Tested and Working in App
 
 app.post('/createreport', createRecord); // Tested and Working in App
+
+app.get('/records', getRecords);
 
 
 const port = process.env.PORT || 3000;

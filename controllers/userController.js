@@ -70,7 +70,7 @@ function createUser(req, res) {
 
 function deleteUser(req, res) {
     if (!req.headers.authorization) {
-        return res.status(401).json({msg: 'No authorization header sent'});
+        return res.status(401).json({msg: 'No authorization header sent'});a            ``
     }
     if (req.method === 'DELETE') {
         const token = req.headers.authorization.split(' ')[1];
